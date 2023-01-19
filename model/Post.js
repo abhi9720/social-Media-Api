@@ -10,7 +10,11 @@ const PostSchema = new Schema({
         // if user deleted their account and they still want to keep their post
         type: String,
     },
-    text: {
+    Title: {
+        type: String,
+        required: true,
+    },
+    Description: {
         type: String,
         required: true,
     },
