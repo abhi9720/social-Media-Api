@@ -12,7 +12,10 @@ const User = require("../model/User");
 // @access      private
 router.post(
     "/",
-    [isAuth, [check("Description", "Text required").not().isEmpty()]],
+    [isAuth,
+        [check("Title", "Title required").not().isEmpty()],
+        [check("Description", "Description required").not().isEmpty()]
+    ],
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
