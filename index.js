@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const express = require('express');
 const app = express();
-
+const fs = require("fs");
 const cors = require('cors')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
@@ -44,6 +44,7 @@ app.use(express.json({ extended: false })); // to get body data similar to body 
 const authRoutes = require("./routes/auth")
 const postRoues = require('./routes/post')
 const functionroute = require('./routes/api');
+const { marked } = require("marked");
 app.use("/api/authenticate", authRoutes);
 app.use('/api/posts', postRoues);
 app.use('/api', functionroute)
@@ -53,5 +54,8 @@ app.use('/api', functionroute)
 
 
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    var path = __dirname + '/README.md'
+    var file = fs.readFileSync(path, 'utf8');
+    res.send(marked(file.toString()));
+
 });
