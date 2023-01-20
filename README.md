@@ -2,15 +2,15 @@
 
 **Feature Of API :**
 
-The API should support features like getting a user profile, follow a user, upload a post, delete a post, like a post, unlike a liked post, and comment on a post.
+The API support features like getting a user profile, follow a user, upload a post, delete a post, like a post, unlike a liked post, and comment on a post.
 
 ### **API Endpoints**
 
-- **POST /api/authenticate** should perform user authentication and return a JWT token.
+- **POST /api/authenticate**  perform user authentication and return a JWT token.
     - INPUT: Email, Password
     - RETURN: JWT token
 
-- **POST /api/authenticate/register** should perform user authentication and return a JWT token.
+- **POST /api/authenticate/register**  perform user authentication and return a JWT token.
     - INPUT: name, Email, Password
     - RETURN: JWT token
     
@@ -18,7 +18,7 @@ The API should support features like getting a user profile, follow a user, uplo
 
 - **POST /api/unfollow/{id}** authenticated user would unfollow a user with {id}
 
-- **GET /api/user** should authenticate the request and return the respective user profile.
+- **GET /api/user**  authenticate the request and return the respective user profile.
     - RETURN: User Name, number of followers & followings.
     
 - **POST /api/posts/** would add a new post created by the authenticated user.
